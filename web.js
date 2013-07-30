@@ -5,6 +5,7 @@ var fs = require('fs');
 var htmlfile = "index.html";
 var app = express.createServer(express.logger());
 
+app.use(express.static(__dirname+"/bootstrap/"));
 
 app.get('/', function(request, response) {
   var html = fs.readFileSync(htmlfile).toString();
